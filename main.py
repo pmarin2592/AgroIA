@@ -97,7 +97,7 @@ def iniciar_api():
             raise FileNotFoundError(f"El archivo Api.py no existe: {api_file}")
 
         logger.info("Iniciando servidor API...")
-        uvicorn.run("Api:app", host="127.0.0.1", port=8000, log_level="info")
+        uvicorn.run("Api:app", host="0.0.0.0", port=8000, log_level="info")
 
     except FileNotFoundError as e:
         logger.error(f"Archivo no encontrado: {e}")
